@@ -2,7 +2,6 @@ install:
  # Install verilator
  - git clone http://git.veripool.org/git/verilator
  - unset VERILATOR_ROOT
- - set RV_ROOT $CD       # Set RV_ROOT to current directory
  - cd verilator
  - git pull              # Make sure we're up-to-date
  - git describe --tags   # Show latest version
@@ -18,4 +17,5 @@ install:
 
 script:
  - configs/swerv.config -h       # Possibility to add different configs in the future
- - make -f $TRAVIS_BUILD_DIR/tools/Makefile verilator-run   # Run "Hello World" program
+ - set RV_ROOT $TRAVIS_BUILD_DIR
+ - make -f $RV_ROOT/tools/Makefile verilator-run   # Run "Hello World" program

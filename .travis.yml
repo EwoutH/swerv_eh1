@@ -18,4 +18,4 @@ install:
 
 script:
  - configs/swerv.config -h       # Possibility to add different configs in the future
- - make -f $RV_ROOT/tools/Makefile verilator-run   # Run "Hello World" program
+ - make -f $TRAVIS_BUILD_DIR/tools/Makefile verilator-run   # Run "Hello World" program

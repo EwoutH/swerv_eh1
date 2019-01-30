@@ -1,15 +1,18 @@
 install:
  - git clone http://git.veripool.org/git/verilator
+ - git submodule update --init --recursive
  - unset VERILATOR_ROOT
  - set RV_ROOT $CD       # Set RV_ROOT to current directory
  - cd verilator
  - git pull              # Make sure we're up-to-date
+ - git submodule update --init --recursive
  - git describe --tags   # Show latest version
  - autoconf              # Create ./configure script
  - ./configure
  - make --no-print-directory
  - sudo make install
  - cd $TRAVIS_BUILD_DIR
+ - git submodule update --init --recursive
 
 script:
  - $(TRAVIS_BUILD_DIR)/configs/swerv.config -h

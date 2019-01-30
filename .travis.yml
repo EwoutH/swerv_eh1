@@ -17,7 +17,5 @@ install:
  - cd $TRAVIS_BUILD_DIR
 
 script:
- - configs/swerv.config -h
- - configs/swerv.config
- - configs/swerv.config -dccm_size=64
- - configs/swerv.config -snapshot=dccm64
+ - configs/swerv.config -h       # Possibility to add different configs in the future
+ - make -f $RV_ROOT/tools/Makefile verilator-run   # Run "Hello World" program

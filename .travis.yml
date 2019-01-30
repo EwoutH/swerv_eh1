@@ -1,6 +1,5 @@
 install:
  - git clone http://git.veripool.org/git/verilator
- - unsetenv VERILATOR_ROOT  # For csh; ignore error if on bash
  - unset VERILATOR_ROOT  # For bash
  - cd verilator
  - git pull        # Make sure we're up-to-date

@@ -12,7 +12,7 @@ install:
  - cd $RV_ROOT           # Go back to default build directory
 
 script:
- - configs/swerv.config -h
+ - /**/swerv.config -h
  - configs/swerv.config
  - configs/swerv.config -dccm_size=64
  - configs/swerv.config -snapshot=dccm64

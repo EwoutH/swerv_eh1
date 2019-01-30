@@ -1,13 +1,15 @@
 install:
  - git clone http://git.veripool.org/git/verilator
- - unset VERILATOR_ROOT  # For bash
+ - unset VERILATOR_ROOT
+ - set RV_ROOT $CD       # Set RV_ROOT to current directory
  - cd verilator
- - git pull        # Make sure we're up-to-date
- - git tag         # See what versions exist
- - autoconf        # Create ./configure script
+ - git pull              # Make sure we're up-to-date
+ - git describe --tags   # Show latest version
+ - autoconf              # Create ./configure script
  - ./configure
- - make
+ - make --no-print-directory
  - sudo make install
+ - cd $RV_ROOT           # Go back to default build directory
 
 script:
  - configs/swerv.config -h

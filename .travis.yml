@@ -15,7 +15,7 @@ install:
  - git submodule update --init --recursive
 
 script:
- - $(TRAVIS_BUILD_DIR)/configs/swerv.config -h
- - $(TRAVIS_BUILD_DIR)configs/swerv.config
- - $(TRAVIS_BUILD_DIR)configs/swerv.config -dccm_size=64
- - $(TRAVIS_BUILD_DIR)configs/swerv.config -snapshot=dccm64
+ - configs/swerv.config -h
+ - configs/swerv.config
+ - configs/swerv.config -dccm_size=64
+ - configs/swerv.config -snapshot=dccm64

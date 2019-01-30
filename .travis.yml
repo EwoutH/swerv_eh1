@@ -9,10 +9,10 @@ install:
  - ./configure
  - make --no-print-directory
  - sudo make install
- - cd $RV_ROOT           # Go back to default build directory
+ - cd $TRAVIS_BUILD_DIR
 
 script:
- - /**/swerv.config -h
+ - configs/swerv.config -h
  - configs/swerv.config
  - configs/swerv.config -dccm_size=64
  - configs/swerv.config -snapshot=dccm64

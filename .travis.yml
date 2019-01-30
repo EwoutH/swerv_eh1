@@ -1,0 +1,17 @@
+install:
+ - git clone http://git.veripool.org/git/verilator
+ - unsetenv VERILATOR_ROOT  # For csh; ignore error if on bash
+ - unset VERILATOR_ROOT  # For bash
+ - cd verilator
+ - git pull        # Make sure we're up-to-date
+ - git tag         # See what versions exist
+ - autoconf        # Create ./configure script
+ - ./configure
+ - make
+ - sudo make install
+
+script:
+ - configs/swerv.config -h
+ - configs/swerv.config
+ - configs/swerv.config -dccm_size=64
+ - configs/swerv.config -snapshot=dccm64
